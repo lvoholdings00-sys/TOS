@@ -4,6 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terms of Service · LVO Holdings</title>
+  <meta name="description" content="Terms of Service governing access to wearelvo.com, the private correspondence and partnership-evaluation portal of LVO Holdings (Houston, TX)."/>
+  <meta name="robots" content="noindex, follow"/>
+  <meta property="og:title" content="Terms of Service · LVO Holdings"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://wearelvo.com/terms"/>
+  <link rel="canonical" href="https://wearelvo.com/terms"/>
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -19,6 +25,10 @@
       --bg:     #000000;
     }
     html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
     body {
       background: var(--bg);
       color: var(--white);
@@ -34,6 +44,27 @@
       opacity: 0.03;
       pointer-events: none;
       z-index: 9999;
+    }
+
+    /* SKIP LINK */
+    .skip-link {
+      position: absolute;
+      top: -60px; left: 1rem;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.6rem 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      z-index: 200;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 1px solid var(--red-hi);
+      outline-offset: 3px;
     }
 
     /* NAV */
@@ -67,7 +98,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .nav-back:hover { color: var(--white); }
+    .nav-back:hover, .nav-back:focus-visible { color: var(--white); }
     .nav-back-arrow { color: var(--red-hi); }
 
     /* PAGE HEADER */
@@ -109,12 +140,46 @@
       letter-spacing: 0.3em;
       color: var(--dim);
     }
+    .page-date span { color: var(--chrome); }
     .header-rule {
       width: 1px;
       height: 50px;
       background: linear-gradient(to bottom, transparent, var(--red-hi), transparent);
       margin: 3rem auto 0;
     }
+
+    /* TOC */
+    .toc {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .toc-inner {
+      border: 0.5px solid rgba(139,0,0,0.2);
+      padding: 1.6rem 1.8rem;
+    }
+    .toc-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.35em;
+      color: var(--red-hi);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 2rem;
+    }
+    .toc-grid a {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .toc-grid a:hover, .toc-grid a:focus-visible { color: var(--chrome); }
 
     /* CONTENT WRAP */
     .policy-wrap {
@@ -151,8 +216,12 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+      scroll-margin-top: 6rem;
     }
     .policy-section.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .policy-section { opacity: 1; transform: none; }
+    }
 
     .section-num {
       font-family: 'Cinzel', serif;
@@ -307,7 +376,7 @@
       padding-bottom: 0.3rem;
       transition: color 0.3s, border-color 0.3s;
     }
-    .contact-block-email:hover { color: var(--white); border-color: var(--red-hi); }
+    .contact-block-email:hover, .contact-block-email:focus-visible { color: var(--white); border-color: var(--red-hi); }
 
     /* COMPLIANCE NOTICE */
     .compliance-notice {
@@ -361,7 +430,7 @@
       padding-bottom: 0.15rem;
       transition: color 0.3s, border-color 0.3s;
     }
-    .footer-link:hover { color: var(--red-hi); border-color: var(--red-hi); }
+    .footer-link:hover, .footer-link:focus-visible { color: var(--red-hi); border-color: var(--red-hi); }
     .footer-copy {
       font-family: 'Cinzel', serif;
       font-size: 0.5rem;
@@ -374,6 +443,7 @@
       nav { padding: 1.2rem 1.2rem; }
       .page-header { padding: 10rem 1.2rem 4rem; }
       .policy-wrap { padding: 3rem 1.2rem 6rem; }
+      .toc-grid { grid-template-columns: 1fr; }
       .pillar-row { flex-direction: column; gap: 0.4rem; }
       .pillar-row-name { width: auto; }
       .contact-block { flex-direction: column; text-align: center; }
@@ -384,10 +454,12 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav>
     <a class="nav-mark" href="https://wearelvo.com">LVO</a>
     <a class="nav-back" href="https://wearelvo.com">
-      <span class="nav-back-arrow">←</span>
+      <span class="nav-back-arrow" aria-hidden="true">←</span>
       <span>Return</span>
     </a>
   </nav>
@@ -395,11 +467,30 @@
   <header class="page-header">
     <span class="page-eyebrow">Legal · Compliance</span>
     <h1 class="page-title">Terms of Service</h1>
-    <p class="page-date">Effective Date: May 3, 2026</p>
+    <p class="page-date">Effective <span>May 3, 2026</span> &nbsp;·&nbsp; Last Reviewed <span>August 4, 2026</span></p>
     <div class="header-rule"></div>
   </header>
 
-  <main class="policy-wrap">
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-inner">
+      <span class="toc-label">On This Page</span>
+      <div class="toc-grid">
+        <a href="#philosophy">01 · Digital Engagement</a>
+        <a href="#eligibility">02 · Eligibility & Access</a>
+        <a href="#property">03 · Proprietary Property</a>
+        <a href="#dmca">04 · Copyright Complaints</a>
+        <a href="#disclaimers">05 · Disclaimers</a>
+        <a href="#conduct">06 · Conduct & Integrity</a>
+        <a href="#warranty">07 · No Warranty</a>
+        <a href="#liability">08 · Risk Allocation</a>
+        <a href="#law">09 · Governing Law & Venue</a>
+        <a href="#general">10 · General Provisions</a>
+        <a href="#contact">11 · Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="policy-wrap" id="main">
 
     <div class="intro-quote policy-section">
       <p>LVO Holdings operates as a <em>private correspondence</em> organization.<br/>
@@ -408,33 +499,36 @@
 
     <div class="section-divider"><span>The Framework</span></div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="philosophy">
       <span class="section-num">01</span>
-      <p class="section-title">Our Philosophy of Digital Engagement</p>
+      <h2 class="section-title">Our Philosophy of Digital Engagement</h2>
       <div class="section-body">
-        <p>LVO Holdings (Legion V · Omni-Operations) provides <strong>wearelvo.com</strong> as a restricted informational gateway. This Site is not a public forum; it is a secure portal for private correspondence and the evaluation of strategic partnerships.</p>
-        <p>By accessing this Site, you agree that you are entering into a professional relationship governed by these terms. If you do not agree, your sole and exclusive remedy is to immediately discontinue use.</p>
+        <p>LVO Holdings (Legion V · Omni-Operations) provides <strong>wearelvo.com</strong> (the "Site") as a restricted informational gateway operated by LVO Holdings LLC and its affiliated entities (collectively, "LVO Holdings," "we," "us," or "our"). This Site is not a public forum; it is a secure portal for private correspondence and the evaluation of strategic partnerships.</p>
+        <p>By accessing this Site, you agree that you are entering into a professional relationship governed by these Terms of Service (this "Agreement"). If you do not agree, your sole and exclusive remedy is to immediately discontinue use.</p>
+        <p>This Agreement does not govern the separately licensed, regulated program materials of LVO Holdings' operating divisions — including services provided under Texas Health and Human Services Commission (HHSC) licensure — which are addressed under their own program-specific agreements and confidentiality obligations.</p>
       </div>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="eligibility">
       <span class="section-num">02</span>
-      <p class="section-title">Earned Access & Verification</p>
+      <h2 class="section-title">Eligibility & Earned Access</h2>
       <div class="section-body">
         <p>Access to our private portals is contingent upon the verification of your professional credentials and business affiliation.</p>
         <ul class="clause-list">
+          <li><strong>Age Requirement:</strong> You must be at least 18 years of age, and legally capable of entering binding agreements, to use this Site.</li>
           <li><strong>Verification:</strong> You represent and warrant that all data provided for Earned Access is accurate and truthful.</li>
           <li><strong>Credential Security:</strong> You are solely responsible for maintaining the confidentiality of your access codes and for restricting access to the devices used to reach our portal.</li>
-          <li><strong>At-Will Termination:</strong> We reserve the right to suspend or terminate access at our absolute discretion, with or without cause, to protect the integrity of our private correspondence.</li>
+          <li><strong>At-Will Termination:</strong> We reserve the right to suspend or terminate access at our absolute discretion, with or without cause or notice, to protect the integrity of our private correspondence.</li>
         </ul>
       </div>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="property">
       <span class="section-num">03</span>
-      <p class="section-title">Proprietary Property: The Three Pillars</p>
+      <h2 class="section-title">Proprietary Property & Trademarks</h2>
       <div class="section-body">
-        <p>All content published on this Site — including the conceptual frameworks for our three operational pillars — remains the exclusive property of LVO Holdings. Unauthorized use, reproduction, mirroring, or scraping of these proprietary materials is strictly prohibited.</p>
+        <p>All content published on this Site — including text, graphics, design elements, and the conceptual frameworks for our three operational pillars — remains the exclusive property of LVO Holdings or its licensors and is protected under U.S. and international copyright and trademark law. "LVO," "LVO Holdings," and associated marks are proprietary marks of LVO Holdings; no license to use them is granted by your access to this Site.</p>
+        <p>Unauthorized use, reproduction, mirroring, scraping, or automated extraction of these proprietary materials is strictly prohibited absent our prior written consent.</p>
         <div class="pillars-inline">
           <div class="pillar-row">
             <span class="pillar-row-name">Vindex</span>
@@ -452,61 +546,86 @@
       </div>
     </div>
 
+    <div class="policy-section" id="dmca">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Copyright Complaints</h2>
+      <div class="section-body">
+        <p>If you believe material on this Site infringes your copyright, notify us in writing at our Private Inquiries address with: (1) a description of the copyrighted work; (2) the location of the allegedly infringing material on the Site; (3) your contact information; and (4) a statement, made in good faith, that the use is unauthorized. We will investigate and respond to properly submitted notices in accordance with applicable law.</p>
+      </div>
+    </div>
+
     <div class="section-divider"><span>Risk & Compliance</span></div>
 
-    <div class="policy-section">
-      <span class="section-num">04</span>
-      <p class="section-title">Professional & Financial Disclaimers</p>
+    <div class="policy-section" id="disclaimers">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Professional & Financial Disclaimers</h2>
       <div class="section-body">
         <p>LVO Holdings provides information for general evaluation purposes only.</p>
         <ul class="clause-list">
           <li><strong>No Advice:</strong> Nothing on this Site constitutes investment, legal, financial, or tax advice.</li>
           <li><strong>No Solicitation:</strong> This Site does not constitute an offer to sell or a solicitation of an offer to purchase securities or financial products.</li>
           <li><strong>Social Infrastructure:</strong> Data regarding community infrastructure involves significant market and policy volatility; we do not guarantee the currency or completeness of such data.</li>
+          <li><strong>Third-Party Links:</strong> The Site may reference or link to third-party resources we do not control. We are not responsible for the content, accuracy, or practices of any linked third party.</li>
         </ul>
       </div>
     </div>
 
-    <div class="policy-section">
-      <span class="section-num">05</span>
-      <p class="section-title">Conduct & System Integrity</p>
+    <div class="policy-section" id="conduct">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Conduct & System Integrity</h2>
       <div class="section-body">
         <p>To maintain the Earned Access model, users must adhere to strict conduct standards.</p>
         <ul class="clause-list">
-          <li><strong>System Security:</strong> You may not use any hardware or software intended to damage or interfere with the proper working of the Site or surreptitiously intercept any data.</li>
+          <li><strong>System Security:</strong> You may not use any hardware or software intended to damage or interfere with the proper working of the Site, probe or scan its infrastructure, or surreptitiously intercept any data.</li>
           <li><strong>Misrepresentation:</strong> You are prohibited from falsely claiming an official affiliation with LVO Holdings or portraying our organization in a misleading light.</li>
+          <li><strong>Lawful Use Only:</strong> You agree to use the Site only for lawful purposes and in a manner consistent with all applicable local, state, and federal law.</li>
         </ul>
       </div>
     </div>
 
-    <div class="policy-section">
-      <span class="section-num">06</span>
-      <p class="section-title">Governing Law & Harris County Venue</p>
-      <div class="section-body">
-        <p>These terms are governed by the laws of the State of Texas and the Texas Business Organizations Code.</p>
-        <ul class="clause-list">
-          <li><strong>Exclusive Venue:</strong> Any legal proceeding to enforce or interpret this Agreement must be instituted and maintained exclusively in a court of competent jurisdiction in Houston, Harris County, Texas.</li>
-          <li><strong>Mandatory Arbitration:</strong> Disputes shall be resolved through individual binding arbitration in Harris County; you waive any right to participate in class-wide litigation.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="policy-section">
+    <div class="policy-section" id="warranty">
       <span class="section-num">07</span>
-      <p class="section-title">Risk Allocation</p>
+      <h2 class="section-title">Disclaimer of Warranties</h2>
+      <div class="section-body">
+        <p>The Site and all content are provided <strong>"as is"</strong> and <strong>"as available,"</strong> without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not warrant that the Site will be uninterrupted, secure, or error-free.</p>
+      </div>
+    </div>
+
+    <div class="policy-section" id="liability">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Risk Allocation</h2>
       <div class="section-body">
         <ul class="clause-list">
-          <li><strong>Limitation of Liability:</strong> LVO Holdings and its affiliates shall not be held liable for any indirect, incidental, or special damages arising out of your use of the Site, regardless of the legal theory.</li>
+          <li><strong>Limitation of Liability:</strong> To the fullest extent permitted by law, LVO Holdings and its affiliates shall not be held liable for any indirect, incidental, special, or consequential damages arising out of your use of the Site, regardless of the legal theory, even if advised of the possibility of such damages.</li>
           <li><strong>Indemnification:</strong> You agree to indemnify and hold harmless LVO Holdings from any claims, losses, or expenses resulting from your breach of these terms or misuse of proprietary content.</li>
         </ul>
       </div>
     </div>
 
-    <div class="policy-section">
-      <span class="section-num">08</span>
-      <p class="section-title">Modifications & Performance</p>
+    <div class="policy-section" id="law">
+      <span class="section-num">09</span>
+      <h2 class="section-title">Governing Law & Harris County Venue</h2>
       <div class="section-body">
-        <p>We reserve the right to modify these terms at any time. Continued use of the Site after a modification signifies your acceptance of the updated terms. LVO Holdings is not liable for performance failures caused by events beyond our reasonable control, including infrastructure failures or regulatory disruptions.</p>
+        <p>These terms are governed by the laws of the State of Texas and the Texas Business Organizations Code, without regard to conflict-of-law principles.</p>
+        <ul class="clause-list">
+          <li><strong>Exclusive Venue:</strong> Any legal proceeding to enforce or interpret this Agreement not subject to arbitration below must be instituted and maintained exclusively in a court of competent jurisdiction in Houston, Harris County, Texas.</li>
+          <li><strong>Mandatory Arbitration:</strong> Except for claims eligible for small-claims court or injunctive relief protecting our proprietary rights, disputes shall be resolved through individual binding arbitration in Harris County; you and LVO Holdings each waive any right to participate in class-wide litigation or arbitration.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="policy-section" id="general">
+      <span class="section-num">10</span>
+      <h2 class="section-title">General Provisions</h2>
+      <div class="section-body">
+        <ul class="clause-list">
+          <li><strong>Modifications:</strong> We reserve the right to modify these terms at any time. Continued use of the Site after a modification signifies your acceptance of the updated terms.</li>
+          <li><strong>Force Majeure:</strong> LVO Holdings is not liable for performance failures caused by events beyond our reasonable control, including infrastructure failures or regulatory disruptions.</li>
+          <li><strong>Severability:</strong> If any provision of this Agreement is held unenforceable, that provision will be limited to the minimum extent necessary, and the remaining provisions will remain in full effect.</li>
+          <li><strong>No Waiver:</strong> Our failure to enforce any right or provision does not constitute a waiver of that right or provision.</li>
+          <li><strong>Assignment:</strong> You may not assign or transfer this Agreement without our prior written consent; we may assign this Agreement freely in connection with a merger, acquisition, or sale of assets.</li>
+          <li><strong>Entire Agreement:</strong> This Agreement, together with our Privacy Policy, constitutes the entire agreement between you and LVO Holdings regarding the Site.</li>
+        </ul>
       </div>
     </div>
 
@@ -516,10 +635,10 @@
 
     <div class="section-divider"><span>Contact</span></div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="contact">
       <div class="contact-block">
         <span class="contact-block-label">Private Inquiries</span>
-        <a class="contact-block-email" href="mailto:info@wearelvo.com">info@wearelvo.com</a>
+        <a class="contact-block-email" href="mailto:inquiries@wearelvo.com">inquiries@wearelvo.com</a>
       </div>
     </div>
 
@@ -528,6 +647,7 @@
   <footer>
     <span class="footer-mark">LVO Holdings</span>
     <div class="footer-center">
+      <a class="footer-link" href="https://wearelvo.com/terms">Terms of Service</a>
       <a class="footer-link" href="https://privacy.wearelvo.com/">Privacy Policy</a>
       <span class="footer-copy">&copy; 2026 LVO Family Legacy Trust · All Rights Reserved</span>
     </div>
@@ -535,15 +655,20 @@
 
   <script>
     const sections = document.querySelectorAll('.policy-section');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    sections.forEach(s => obs.observe(s));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      sections.forEach(s => s.classList.add('visible'));
+    } else {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      sections.forEach(s => obs.observe(s));
+    }
   </script>
 
 </body>
