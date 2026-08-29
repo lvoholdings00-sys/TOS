@@ -1,132 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terms of Service · LVO Holdings</title>
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--red:#8B0000;--red-hi:#CC2020;--chrome:#C8C8D0;--white:#F0EEEC;--dim:#888880;--bg:#000000}
-    body{background:var(--bg);color:var(--white);font-family:'Cormorant Garamond',Georgia,serif}
-    .page{max-width:760px;margin:0 auto;padding:0 2rem}
-    nav{padding:1.8rem 0;display:flex;justify-content:space-between;align-items:center;border-bottom:.5px solid rgba(204,32,32,.15)}
-    .nav-back{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.35em;color:var(--red-hi);text-decoration:none;text-transform:uppercase}
-    .nav-back:hover{color:var(--chrome)}
-    .updated{font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
-    header{padding:4rem 0 2rem}
-    .eyebrow{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.5em;color:var(--red-hi);text-transform:uppercase;margin-bottom:1rem}
-    h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;letter-spacing:.08em;color:var(--chrome)}
-    main{padding-bottom:6rem}
-    section{padding:2.2rem 0;border-bottom:.5px solid rgba(200,200,208,.08)}
-    section:last-child{border-bottom:none}
-    h2{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.2em;color:var(--red-hi);text-transform:uppercase;margin-bottom:1rem}
-    p{font-size:1rem;font-weight:300;line-height:1.85;color:var(--chrome);margin-bottom:.9rem}
-    p:last-child{margin-bottom:0}
-    ul{padding-left:1.4rem;margin-bottom:.9rem}
-    li{font-size:1rem;font-weight:300;line-height:1.85;color:var(--chrome);margin-bottom:.4rem}
-    a.inline{color:var(--red-hi);text-decoration:none}
-    a.inline:hover{text-decoration:underline}
-    footer{padding:2.5rem 0;border-top:.5px solid rgba(204,32,32,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
-    .footer-link{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.25em;color:var(--dim);text-decoration:none;text-transform:uppercase}
-    .footer-link:hover{color:var(--red-hi)}
-    @media(max-width:600px){.page{padding:0 1.2rem}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Terms of Service · LVO Holdings</title>
+<meta name="description" content="LVO Holdings Terms of Service — the rules governing use of wearelvo.com and all Legion V. Omni-Operation Holdings LLC division portals.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#fff;
+  --dim:rgba(255,255,255,0.7);
+  --dimmer:rgba(255,255,255,0.45);
+  --dimmest:rgba(255,255,255,0.25);
+  --purple:#7F77DD;
+  --red-hi:#CC2020;
+  --chrome:#C8C8D0;
+  --panel-bg:rgba(255,255,255,0.02);
+  --panel-border:rgba(139,0,0,0.28);
+  --rule:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:#050505;
+  color:var(--dim);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  line-height:1.85;
+  min-height:100vh;
+}
+a{color:var(--chrome);}
+::selection{background:rgba(204,32,32,0.35);color:#fff;}
+
+#topbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:clamp(14px,3vw,22px) clamp(18px,5vw,48px);
+  background:rgba(5,5,5,0.82);
+  backdrop-filter:blur(10px);
+  border-bottom:0.5px solid var(--rule);
+}
+#topbar .mark{
+  font-family:'Cinzel',serif;font-weight:900;letter-spacing:.32em;
+  font-size:clamp(13px,2vw,16px);color:var(--white);text-decoration:none;
+  display:flex;align-items:center;gap:14px;
+}
+#topbar .mark span.sub{
+  font-family:'Cormorant SC',serif;font-weight:400;letter-spacing:.25em;
+  font-size:.6rem;color:var(--dimmest);text-transform:uppercase;
+  display:none;
+}
+@media(min-width:640px){ #topbar .mark span.sub{ display:inline; } }
+#topbar nav{display:flex;gap:clamp(14px,3vw,28px);align-items:center;}
+#topbar nav a{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;text-decoration:none;color:var(--dimmer);
+  border-bottom:0.5px solid transparent;padding-bottom:3px;
+  transition:color .3s,border-color .3s;
+}
+#topbar nav a:hover,#topbar nav a.current{ color:var(--white); border-color:var(--red-hi); }
+
+#hero{
+  padding:clamp(56px,10vw,110px) clamp(18px,6vw,48px) clamp(30px,6vw,56px);
+  max-width:900px;margin:0 auto;text-align:center;
+}
+#hero .eyebrow{
+  font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.42em;
+  color:var(--red-hi);text-transform:uppercase;margin-bottom:1.4rem;
+}
+#hero h1{
+  font-family:'IM Fell English',Georgia,serif;font-style:italic;font-weight:400;
+  font-size:clamp(34px,6vw,58px);color:var(--white);line-height:1.15;margin-bottom:1.2rem;
+}
+#hero .meta{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;
+  color:var(--dimmest);text-transform:uppercase;
+}
+#hero .meta strong{ color:var(--chrome); font-weight:600; }
+#hero .rule{
+  width:1px;height:52px;margin:1.8rem auto 0;
+  background:linear-gradient(to bottom,transparent,var(--red-hi),transparent);
+}
+
+#layout{
+  max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:280px minmax(0,1fr);gap:clamp(24px,4vw,60px);
+  padding:0 clamp(18px,6vw,48px) clamp(60px,10vw,120px);
+}
+@media(max-width:900px){ #layout{ grid-template-columns:1fr; } }
+
+#toc{
+  position:sticky;top:96px;align-self:start;
+  border:0.5px solid var(--panel-border);background:var(--panel-bg);
+  padding:1.6rem 1.5rem;
+}
+@media(max-width:900px){ #toc{ position:relative;top:0; margin-bottom:1rem; } }
+#toc .toc-label{
+  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;
+  color:var(--dimmest);text-transform:uppercase;margin-bottom:1rem;
+}
+#toc ol{list-style:none;counter-reset:toc;}
+#toc li{counter-increment:toc;margin-bottom:.65rem;}
+#toc li a{
+  display:flex;gap:.6rem;text-decoration:none;color:var(--dimmer);
+  font-size:.92rem;line-height:1.4;transition:color .25s;
+}
+#toc li a::before{
+  content:counter(toc);
+  font-family:'Cinzel',serif;font-size:.68rem;color:var(--red-hi);
+  min-width:1.4em;
+}
+#toc li a:hover{ color:var(--white); }
+
+article section{
+  padding-bottom:clamp(28px,4vw,44px);
+  margin-bottom:clamp(28px,4vw,44px);
+  border-bottom:0.5px solid var(--rule);
+}
+article section:last-child{ border-bottom:none; }
+article h2{
+  font-family:'IM Fell English',Georgia,serif;font-style:italic;font-weight:400;
+  font-size:clamp(24px,3.2vw,32px);color:var(--white);margin-bottom:1rem;
+  display:flex;align-items:baseline;gap:.7rem;
+}
+article h2 .num{
+  font-family:'Cinzel',serif;font-style:normal;font-size:.62rem;
+  letter-spacing:.15em;color:var(--red-hi);
+}
+article h3{
+  font-family:'Cinzel',serif;font-weight:600;font-size:.82rem;letter-spacing:.08em;
+  color:var(--chrome);text-transform:uppercase;margin:1.4rem 0 .7rem;
+}
+article p{ margin-bottom:1rem;font-size:1.02rem; color:var(--dim); }
+article p.lede{ color:var(--dimmer); font-style:italic; }
+article ul,article ol{ margin:0 0 1.1rem 1.3rem; }
+article ul li,article ol li{ margin-bottom:.55rem;font-size:1.02rem;color:var(--dim); }
+article strong{ color:var(--white); font-weight:600; }
+article a.inline{ color:var(--purple); text-decoration:underline; text-underline-offset:3px; }
+
+table.data-table{ width:100%; border-collapse:collapse; margin:1rem 0 1.4rem; font-size:.95rem; }
+table.data-table th,table.data-table td{
+  border:0.5px solid var(--rule); padding:.7rem .9rem; text-align:left; vertical-align:top;
+}
+table.data-table th{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--chrome);background:rgba(255,255,255,0.03);
+}
+table.data-table td{ color:var(--dim); }
+
+.callout{
+  border-left:2px solid var(--red-hi);
+  background:rgba(204,32,32,0.06);
+  padding:1rem 1.3rem;margin:1.2rem 0;
+}
+.callout p{ margin-bottom:0; color:var(--dimmer); font-size:.95rem; }
+.callout.warn{ border-left-color:#C6A15B; background:rgba(198,161,91,0.07); }
+
+.division-grid{ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.4rem; }
+.division-card{ border:0.5px solid var(--rule);padding:1.1rem 1.2rem; }
+.division-card .d-name{
+  font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:.5rem;
+}
+.division-card p{ font-size:.9rem;margin-bottom:0;color:var(--dimmer); }
+.division-card.vindex .d-name{ color:#C6A15B; }
+.division-card.alliance .d-name{ color:#7F77DD; }
+.division-card.operations .d-name{ color:#1D9E75; }
+.division-card.careers .d-name{ color:var(--chrome); }
+
+footer{
+  border-top:0.5px solid var(--rule);
+  padding:clamp(28px,5vw,44px) clamp(18px,6vw,48px);
+  display:flex;flex-wrap:wrap;gap:1.4rem 2rem;align-items:center;justify-content:space-between;
+}
+footer .fmark{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.28em;color:var(--dimmest);
+  text-transform:uppercase;
+}
+footer .flinks{ display:flex;gap:1.6rem;flex-wrap:wrap; }
+footer .flinks a{
+  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dimmer);text-decoration:none;border-bottom:0.5px solid rgba(139,0,0,0.3);
+  padding-bottom:2px;transition:color .3s,border-color .3s;
+}
+footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
+
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:#050505; }
+::-webkit-scrollbar-thumb{ background:rgba(139,0,0,0.35); }
+</style>
 </head>
 <body>
-<div class="page">
+
+<div id="topbar">
+  <a class="mark" href="https://wearelvo.com/">LVO <span class="sub">Legion V. Omni-Operations</span></a>
   <nav>
-    <a class="nav-back" href="https://wearelvo.com">← LVO Holdings</a>
-    <span class="updated">Last Updated · August 6, 2026</span>
+    <a href="https://wearelvo.com/">Home</a>
+    <a href="https://privacy.wearelvo.com">Privacy</a>
+    <a href="https://tos.wearelvo.com" class="current">Terms</a>
+  </nav>
+</div>
+
+<header id="hero">
+  <div class="eyebrow">Terms of Service</div>
+  <h1>The Terms Governing Your Use of LVO Holdings</h1>
+  <div class="meta">Effective <strong>August 28, 2026</strong> &nbsp;·&nbsp; Last Reviewed <strong>August 28, 2026</strong></div>
+  <div class="rule"></div>
+</header>
+
+<div id="layout">
+
+  <nav id="toc" aria-label="Table of contents">
+    <div class="toc-label">On This Page</div>
+    <ol>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#who-we-are">Who We Are &amp; Our Services</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#accounts">Accounts &amp; Authentication</a></li>
+      <li><a href="#acceptable-use">Acceptable Use</a></li>
+      <li><a href="#content">User Content &amp; Submissions</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#vindex">Vindex-Specific Terms</a></li>
+      <li><a href="#alliance">Alliance-Specific Terms</a></li>
+      <li><a href="#operations">Operations &amp; CLQ-Specific Terms</a></li>
+      <li><a href="#careers">Careers-Specific Terms</a></li>
+      <li><a href="#thirdparty">Third-Party Services &amp; Links</a></li>
+      <li><a href="#disclaimers">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#indemnification">Indemnification</a></li>
+      <li><a href="#termination">Suspension &amp; Termination</a></li>
+      <li><a href="#governing-law">Governing Law &amp; Disputes</a></li>
+      <li><a href="#arbitration">Arbitration Agreement</a></li>
+      <li><a href="#general">General Provisions</a></li>
+      <li><a href="#changes">Changes to These Terms</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
   </nav>
 
-  <header>
-    <p class="eyebrow">Legal</p>
-    <h1>Terms of Service</h1>
-  </header>
+  <article>
 
-  <main>
-    <section>
-      <h2>1. Acceptance of Terms</h2>
-      <p>These Terms of Service ("Terms") govern access to and use of any website, portal, or dashboard operated by Legion V. Omni-Operation Holdings LLC ("LVO Holdings," "we," "us," or "our"), including but not limited to LVO Vindex, LVO Alliance, and LVO Operations (collectively, the "Services"). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.</p>
+    <section id="acceptance">
+      <h2><span class="num">01</span> Acceptance of Terms</h2>
+      <p class="lede">These Terms of Service ("Terms") form a binding agreement between you and Legion V. Omni-Operation Holdings LLC, doing business as "LVO Holdings" or "LVO" ("we," "us," "our," or the "Company"), governing your access to and use of wearelvo.com and all associated subdomains, division portals, and applications (collectively, the "Services").</p>
+      <p>By accessing or using the Services, creating an account, submitting an application, or otherwise interacting with any LVO Holdings division portal, you agree to be bound by these Terms and by our <a class="inline" href="https://privacy.wearelvo.com">Privacy Policy</a>, which is incorporated into these Terms by reference. If you do not agree, you must not access or use the Services.</p>
     </section>
 
-    <section>
-      <h2>2. Who We Are</h2>
-      <p>LVO Holdings is a privately held holding company based in Houston, Texas, operating through a family of divisions spanning real estate, partnerships and capital, and licensed social services. Each division may maintain its own member portal, but all portals and public-facing sites are operated under this single set of Terms unless a division states otherwise in writing.</p>
+    <section id="who-we-are">
+      <h2><span class="num">02</span> Who We Are &amp; Our Services</h2>
+      <p>LVO Holdings is a privately held, multi-division operations group based in Houston, Texas, overseen by the Marts Trust. The Services provide information about, and access to, the following divisions, each operating under its own subdomain of wearelvo.com:</p>
+      <div class="division-grid">
+        <div class="division-card vindex"><div class="d-name">Vindex</div><p>Real estate acquisition, ownership, and asset management.</p></div>
+        <div class="division-card alliance"><div class="d-name">Alliance</div><p>Partnerships and capital formation, including deal rooms and investor tooling.</p></div>
+        <div class="division-card operations"><div class="d-name">Operations</div><p>Social services administration, including the licensed GRO operated by Cool Living Quarters FC LLC.</p></div>
+        <div class="division-card careers"><div class="d-name">Careers</div><p>Recruiting and job applications across LVO Holdings.</p></div>
+      </div>
+      <p>Certain divisions or features may require a separate account, additional agreement, or eligibility verification, as described in the division-specific sections below.</p>
     </section>
 
-    <section>
-      <h2>3. Eligibility &amp; Account Access</h2>
-      <p>Portal access is by invitation, application, or sign-up and is granted at LVO Holdings' discretion. You must be at least 18 years old to create an account. You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately of any unauthorized use.</p>
-      <p>Member tiers, designations, and access levels referenced on any portal (including Alliance's Principal, Associate, Partner, and Member tiers) are internal classifications assigned at LVO Holdings' sole discretion and do not constitute a guarantee of equity, compensation, or continued access.</p>
+    <section id="eligibility">
+      <h2><span class="num">03</span> Eligibility</h2>
+      <p>You must be at least 18 years old and capable of forming a binding contract under applicable law to use the Services. By using the Services, you represent and warrant that you meet these requirements and that all information you provide to us is accurate, current, and complete. Certain Alliance features may additionally require you to meet applicable investor accreditation or suitability standards before you may participate.</p>
     </section>
 
-    <section>
-      <h2>4. Not Investment, Legal, or Financial Advice</h2>
-      <p>Nothing on the Services constitutes an offer to sell, or a solicitation of an offer to buy, any security or investment interest. Content describing acquisitions, joint ventures, capital deployment, or partnership structures is provided for informational purposes only and should not be relied upon as investment, legal, tax, or financial advice. Any actual investment or partnership terms are governed exclusively by separately executed written agreements.</p>
+    <section id="accounts">
+      <h2><span class="num">04</span> Accounts &amp; Authentication</h2>
+      <p>Access to certain division portals requires creating an account through our identity and authentication provider. You are responsible for maintaining the confidentiality of your login credentials and for all activity that occurs under your account. You agree to notify us immediately at <a class="inline" href="mailto:Verification@wearelvo.com">Verification@wearelvo.com</a> of any unauthorized use of your account or any other breach of security. We reserve the right to require additional identity verification, including multi-factor authentication, before granting or continuing access to sensitive portals.</p>
     </section>
 
-    <section>
-      <h2>5. Licensed Operations Disclaimer</h2>
-      <p>Where a division operates a licensed facility or program (including residential care operations under LVO Operations), that division's licensure status, scope, and standards are governed by the applicable Texas regulatory authority and the terms of its license, not by this website. Nothing on this site should be relied upon in place of official licensure records.</p>
-    </section>
-
-    <section>
-      <h2>6. Acceptable Use</h2>
-      <p>You agree not to:</p>
+    <section id="acceptable-use">
+      <h2><span class="num">05</span> Acceptable Use</h2>
+      <p>You agree not to, and not to permit any third party to:</p>
       <ul>
-        <li>Attempt to gain unauthorized access to any portal, account, or system;</li>
-        <li>Interfere with or disrupt the integrity or performance of the Services;</li>
-        <li>Use the Services to transmit unlawful, harassing, or fraudulent content;</li>
-        <li>Reverse engineer, scrape, or copy the Services except as permitted by law;</li>
-        <li>Misrepresent your identity or affiliation with LVO Holdings.</li>
+        <li>Use the Services for any unlawful purpose or in violation of any applicable local, state, federal, or international law or regulation;</li>
+        <li>Attempt to gain unauthorized access to any portion of the Services, other accounts, or connected systems, including through credential stuffing, scraping, or automated scanning;</li>
+        <li>Interfere with, disrupt, or place undue burden on the Services or the networks connected to them, including through denial-of-service attacks or the introduction of malicious code;</li>
+        <li>Reverse engineer, decompile, or otherwise attempt to derive the source code of any non-open-source portion of the Services;</li>
+        <li>Submit false, misleading, or fraudulent information in any application, deal-room submission, or account registration;</li>
+        <li>Use any automated means, including bots or scrapers, to access the Services for purposes other than standard search-engine indexing, without our prior written consent;</li>
+        <li>Impersonate any person or entity, or misrepresent your affiliation with any person or entity; or</li>
+        <li>Use the Services to harass, abuse, or harm another person, or to violate the safety, privacy, or rights of any individual — including, without limitation, any individual served by Cool Living Quarters FC LLC.</li>
+      </ul>
+      <p>We reserve the right, but not the obligation, to investigate and take appropriate action against anyone who violates this section, including removing content, suspending or terminating accounts, and reporting conduct to law enforcement.</p>
+    </section>
+
+    <section id="content">
+      <h2><span class="num">06</span> User Content &amp; Submissions</h2>
+      <p>Where the Services allow you to submit content — including applications, résumés, messages, deal materials, or inquiries ("User Content") — you retain ownership of your User Content, but you grant LVO Holdings a non-exclusive, worldwide, royalty-free license to use, reproduce, and process that User Content solely for the purposes of operating, evaluating, and administering the applicable Service (for example, evaluating a job application or a deal submission). You represent that you have all rights necessary to submit your User Content and that it does not infringe or violate the rights of any third party.</p>
+    </section>
+
+    <section id="ip">
+      <h2><span class="num">07</span> Intellectual Property</h2>
+      <p>The Services, including all text, graphics, logos, imagery, animations, source code, and the overall look and feel (including the LVO Holdings water-shader visual system and division branding), are the property of LVO Holdings or its licensors and are protected by copyright, trademark, and other intellectual property laws. Except as expressly permitted by these Terms, you may not copy, modify, distribute, sell, or lease any part of the Services without our prior written consent. "LVO," "LVO Holdings," "Legion V. Omni-Operations," "Vindex," "Alliance," and associated marks and logos are trademarks of LVO Holdings; nothing in these Terms grants you a license to use them without our prior written permission.</p>
+    </section>
+
+    <section id="vindex">
+      <h2><span class="num">08</span> Vindex-Specific Terms</h2>
+      <p>Content on the Vindex portal relating to properties, valuations, or opportunities is provided for general informational purposes only and does not constitute an offer, solicitation, or guarantee regarding any specific property or transaction. Any real estate transaction is subject to a separate, definitive written agreement between the applicable parties, and the terms of that agreement will govern in the event of any conflict with these Terms.</p>
+    </section>
+
+    <section id="alliance">
+      <h2><span class="num">09</span> Alliance-Specific Terms</h2>
+      <div class="callout warn">
+        <p><strong>No Offer of Securities:</strong> Nothing on the Alliance portal, including any deal room, dashboard, or AI-assisted feature, constitutes an offer to sell, or a solicitation of an offer to buy, any security, partnership interest, or investment product. Any such offer, if made, will be made only through definitive offering documents provided directly to qualified prospective participants.</p>
+      </div>
+      <p>Access to certain Alliance content and deal rooms is restricted to individuals who meet applicable eligibility, accreditation, or suitability criteria and may require additional agreements, including confidentiality and subscription documents. Deal-scoped assistant features made available within the Alliance portal are provided for convenience and informational purposes only and do not constitute financial, investment, tax, or legal advice; you should consult your own qualified advisors before making any investment decision.</p>
+    </section>
+
+    <section id="operations">
+      <h2><span class="num">10</span> Operations &amp; Cool Living Quarters FC LLC-Specific Terms</h2>
+      <div class="callout warn">
+        <p><strong>Not an Emergency Service:</strong> The Operations portal and this website are not monitored on an emergency basis. If you or someone else is in immediate danger, call 911 or the applicable local emergency number.</p>
+      </div>
+      <p>Cool Living Quarters FC LLC operates as a General Residential Operation licensed by the Texas Health and Human Services Commission under 26 TAC Chapter 748. Use of the Operations portal does not create a placement, custodial, or care relationship; any such relationship arises only through the applicable licensed program's separate intake, consent, and program agreements, which govern over these general Terms with respect to program participants and their families.</p>
+    </section>
+
+    <section id="careers">
+      <h2><span class="num">11</span> Careers-Specific Terms</h2>
+      <p>Submitting an application through the Careers portal does not guarantee an interview, offer, or continued consideration for any position. Job postings may be modified, filled, or withdrawn at any time without notice. Any employment relationship resulting from an application is governed by a separate offer letter and, where applicable, employment agreement, and is not created by these Terms.</p>
+    </section>
+
+    <section id="thirdparty">
+      <h2><span class="num">12</span> Third-Party Services &amp; Links</h2>
+      <p>The Services may rely on or link to third-party platforms, including our hosting, identity, email, and analytics providers, or external websites not owned or controlled by LVO Holdings. We are not responsible for the content, policies, or practices of any third-party service or website. Your use of any third-party service is subject to that provider's own terms and privacy policy.</p>
+    </section>
+
+    <section id="disclaimers">
+      <h2><span class="num">13</span> Disclaimers</h2>
+      <p>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. LVO HOLDINGS DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE, OR THAT ANY INFORMATION PROVIDED THROUGH THE SERVICES, INCLUDING ANY AI-ASSISTED FEATURE, IS ACCURATE, COMPLETE, OR CURRENT. YOU USE THE SERVICES AT YOUR OWN RISK.</p>
+    </section>
+
+    <section id="liability">
+      <h2><span class="num">14</span> Limitation of Liability</h2>
+      <p>TO THE FULLEST EXTENT PERMITTED BY LAW, LVO HOLDINGS AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AFFILIATES WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. TO THE FULLEST EXTENT PERMITTED BY LAW, OUR AGGREGATE LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICES WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS ($100) OR THE AMOUNT YOU PAID TO LVO HOLDINGS, IF ANY, FOR THE SERVICES GIVING RISE TO THE CLAIM IN THE TWELVE MONTHS PRECEDING THE CLAIM, WHICHEVER IS GREATER. SOME JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.</p>
+    </section>
+
+    <section id="indemnification">
+      <h2><span class="num">15</span> Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless LVO Holdings and its officers, directors, employees, and affiliates from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or related to your violation of these Terms, your misuse of the Services, or your violation of any rights of a third party.</p>
+    </section>
+
+    <section id="termination">
+      <h2><span class="num">16</span> Suspension &amp; Termination</h2>
+      <p>We may suspend or terminate your access to the Services, in whole or in part, at any time, with or without notice, including if we believe you have violated these Terms, applicable law, or pose a risk to LVO Holdings, other users, or third parties. You may stop using the Services and, where applicable, request deletion of your account at any time by contacting us as described in Section 21. Sections of these Terms that by their nature should survive termination — including Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, and Governing Law — will survive.</p>
+    </section>
+
+    <section id="governing-law">
+      <h2><span class="num">17</span> Governing Law &amp; Disputes</h2>
+      <p>These Terms are governed by the laws of the State of Texas, without regard to its conflict-of-laws principles. Subject to the arbitration agreement in Section 18, you agree that any dispute arising out of or relating to these Terms or the Services will be brought exclusively in the state or federal courts located in Harris County, Texas, and you consent to the personal jurisdiction of those courts.</p>
+    </section>
+
+    <section id="arbitration">
+      <h2><span class="num">18</span> Arbitration Agreement</h2>
+      <p>Except for disputes that qualify for small-claims court or seek injunctive relief to protect intellectual property or confidential information, you and LVO Holdings agree that any dispute arising out of or relating to these Terms or the Services will be resolved through final and binding arbitration, rather than in court, except that you may assert claims in small-claims court if your claims qualify. Arbitration will be conducted on an individual basis; you and LVO Holdings each waive any right to participate in a class action, class arbitration, or representative proceeding. This arbitration agreement is governed by the Federal Arbitration Act. If any part of this arbitration agreement is found unenforceable, the remainder will remain in effect, and the dispute will proceed in the courts described in Section 17.</p>
+    </section>
+
+    <section id="general">
+      <h2><span class="num">19</span> General Provisions</h2>
+      <ul>
+        <li><strong>Entire Agreement:</strong> These Terms, together with our Privacy Policy and any division-specific agreements referenced herein, constitute the entire agreement between you and LVO Holdings regarding the Services.</li>
+        <li><strong>Severability:</strong> If any provision of these Terms is held unenforceable, the remaining provisions will remain in full force and effect.</li>
+        <li><strong>No Waiver:</strong> Our failure to enforce any provision of these Terms will not be deemed a waiver of that provision.</li>
+        <li><strong>Assignment:</strong> You may not assign or transfer these Terms without our prior written consent; we may assign these Terms without restriction in connection with a merger, acquisition, or sale of assets.</li>
+        <li><strong>Force Majeure:</strong> We will not be liable for any failure or delay in performance resulting from causes beyond our reasonable control.</li>
+        <li><strong>Notices:</strong> We may provide notices to you via the email address associated with your account or by posting on the Services.</li>
       </ul>
     </section>
 
-    <section>
-      <h2>7. Intellectual Property</h2>
-      <p>All trademarks, logos, copy, design elements, and other content on the Services are the property of LVO Holdings or its licensors and are protected by applicable intellectual property laws. No license is granted to use LVO Holdings branding except as expressly authorized in writing.</p>
+    <section id="changes">
+      <h2><span class="num">20</span> Changes to These Terms</h2>
+      <p>We may revise these Terms from time to time. We will post the revised Terms with an updated "Last Reviewed" date and, where changes are material, provide additional notice as appropriate. Your continued use of the Services after revised Terms become effective constitutes your acceptance of the changes. If you do not agree to the revised Terms, you must stop using the Services.</p>
     </section>
 
-    <section>
-      <h2>8. Third-Party Services</h2>
-      <p>The Services use third-party infrastructure providers, including Clerk (authentication) and Cloudflare (hosting, security, and analytics). Your use of the Services is also subject to those providers' respective terms where applicable. LVO Holdings is not responsible for the availability or performance of third-party infrastructure.</p>
+    <section id="contact">
+      <h2><span class="num">21</span> Contact Us</h2>
+      <p>Questions about these Terms of Service should be directed to:</p>
+      <div class="callout">
+        <p><strong>Legion V. Omni-Operation Holdings LLC</strong><br>
+        Attn: Legal<br>
+        Houston, Texas, United States<br>
+        Email: <a class="inline" href="mailto:Verification@wearelvo.com">Verification@wearelvo.com</a></p>
+      </div>
     </section>
 
-    <section>
-      <h2>9. Disclaimers &amp; Limitation of Liability</h2>
-      <p>The Services are provided "as is" without warranties of any kind, express or implied. To the fullest extent permitted by law, LVO Holdings disclaims all liability for indirect, incidental, or consequential damages arising from your use of, or inability to use, the Services.</p>
-    </section>
-
-    <section>
-      <h2>10. Termination</h2>
-      <p>We may suspend or terminate your access to any portal at any time, with or without cause, including for violation of these Terms. Sections that by their nature should survive termination (including Intellectual Property, Disclaimers, and Governing Law) will survive.</p>
-    </section>
-
-    <section>
-      <h2>11. Governing Law</h2>
-      <p>These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law principles. Any dispute arising from these Terms or the Services will be resolved exclusively in the state or federal courts located in Harris County, Texas.</p>
-    </section>
-
-    <section>
-      <h2>12. Changes to These Terms</h2>
-      <p>We may update these Terms from time to time. Material changes will be reflected by an updated "Last Updated" date above. Continued use of the Services after changes take effect constitutes acceptance of the revised Terms.</p>
-    </section>
-
-    <section>
-      <h2>13. Contact</h2>
-      <p>Questions about these Terms can be directed to <a class="inline" href="mailto:legal@wearelvo.com">legal@wearelvo.com</a>.</p>
-    </section>
-  </main>
-
-  <footer>
-    <a class="footer-link" href="https://wearelvo.com">← wearelvo.com</a>
-    <a class="footer-link" href="privacy.html">Privacy Policy</a>
-  </footer>
+  </article>
 </div>
+
+<footer>
+  <div class="fmark">LVO Holdings · Legion V. Omni-Operations</div>
+  <div class="flinks">
+    <a href="https://wearelvo.com/">Home</a>
+    <a href="https://privacy.wearelvo.com">Privacy Policy</a>
+    <a href="mailto:Verification@wearelvo.com">Contact</a>
+  </div>
+</footer>
+
 </body>
 </html>
