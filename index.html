@@ -193,6 +193,12 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
 article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78em;color:var(--white);word-break:break-all}
 @media(max-width:900px){#layout{grid-template-columns:minmax(0,1fr)}article{min-width:0}}
 @media(max-width:720px){table.data-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}table.data-table th,table.data-table td{min-width:120px}}
+
+@media(min-width:901px){#toc{max-height:calc(100vh - 120px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.18) transparent}#toc::-webkit-scrollbar{width:4px}#toc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18)}}
+article section{scroll-margin-top:100px}
+#toc li a{transition:color .25s}
+#toc li a.active{color:var(--white)}
+#toc li a.active::before{color:var(--white)}
 </style>
 </head>
 <body>
@@ -386,6 +392,7 @@ article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fo
       <h3>AI Assistants &amp; Translation</h3>
       <p>The Alliance portal assistant, the AI chat assistants in LVO Chat, and the optional message-translation feature rely on third-party providers. When you message an assistant, mention it in a channel, or use translation, the relevant message text and, for assistants, recent conversation context are sent to a third-party provider to generate a response; translation requests may be made directly from your browser to the provider's service. AI output is automated, may be inaccurate, incomplete, or out of date, and is not financial, investment, legal, tax, medical, or other professional advice. You are responsible for reviewing any output before relying on it, and you should not submit sensitive personal information, credentials, or confidential deal or program information to an assistant or translation tool.</p>
       <h3>Status Board &amp; Live Data Layers</h3>
+      <p>The LVO Obscura status board reports the availability of our divisions and services and includes an optional situational-awareness globe with layers that may show third-party data such as aircraft (including military aircraft), vessels, traffic, transit vehicles, public webcams and mapped camera locations, weather, earthquakes, and infrastructure. This data comes from third-party and public sources, may be delayed, incomplete, or inaccurate, and is provided as-is for general situational awareness only. It must not be used for navigation, emergency response, or any safety-critical decision, and its use is subject to Section 6. Live layers load only after you consent to them through our cookie settings. Third-party data remains subject to its provider's terms and attribution requirements.</p>
       <h3>Service Status &amp; Availability</h3>
       <p>Services may be taken offline, restricted, or replaced with a service-unavailable page at any time for maintenance, security, or operational reasons, without notice or liability to you. Status information is provided for convenience only and is not a guarantee of availability.</p>
     </section>
@@ -472,5 +479,29 @@ article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fo
   </div>
 </footer>
 
+<script>
+(function(){
+  var toc=document.getElementById('toc'); if(!toc) return;
+  var links=[].slice.call(toc.querySelectorAll('a')), map={}, secs=[].slice.call(document.querySelectorAll('article section')), cur=null;
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function set(id){
+    if(id===cur) return; cur=id;
+    links.forEach(function(a){ var on=(a===map[id]); a.classList.toggle('active',on); if(on) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+    var a=map[id];
+    if(a && getComputedStyle(toc).position==='sticky'){
+      var t=toc.getBoundingClientRect(), r=a.getBoundingClientRect();
+      if(r.top<t.top+60 || r.bottom>t.bottom-30){ toc.scrollTo({top:toc.scrollTop+(r.top-t.top)-toc.clientHeight/2, behavior:calm?'auto':'smooth'}); }
+    }
+  }
+  function onScroll(){
+    var found=secs[0].id;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top<=130) found=s.id; });
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4) found=secs[secs.length-1].id;
+    set(found);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); onScroll();
+})();
+</script>
 </body>
 </html>
